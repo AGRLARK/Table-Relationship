@@ -1,6 +1,6 @@
 import { useState } from "react"
-import Sidebar from "../components/Sidebar"
-import GridArea from "../components/GridArea"
+import Sidebar from "./Sidebar"
+import GridArea from "./GridArea"
 const mockTables = [
   {
     id: "employee_salary",
@@ -40,9 +40,9 @@ export default function TableVisualization() {
   const [gridTables, setGridTables] = useState([])
 
   const handleTableDrop = (table, position) => {
-    if (gridTables.some((t) => t.id === table.id)) { 
+    if (gridTables.some((t) => t.id === table.id)) {
       setGridTables((prev) => prev.map((t) => (t.id === table.id ? { ...t, position } : t)))
-    } else { 
+    } else {
       setGridTables((prev) => [
         ...prev,
         {

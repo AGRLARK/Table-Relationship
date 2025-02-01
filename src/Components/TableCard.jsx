@@ -46,7 +46,7 @@ export default function TableCard({ table, onClose, style, onColumnDrop, onDragS
 
     try {
       const data = JSON.parse(e.dataTransfer.getData("application/json"))
-      if (data.tableId === table.id) return 
+      if (data.tableId === table.id) return
 
       onColumnDrop && onColumnDrop(data.tableId, data.columnName, table.id, targetColumn.name)
     } catch (err) {
